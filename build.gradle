@@ -1,0 +1,27 @@
+plugins {
+    id "java"
+    id "application"
+    id "org.sonarqube" version "3.5.0.2730"
+}
+
+version = "0.1.0"
+sourceCompatibility = 11
+
+mainClassName = "Main"
+
+sonarqube {
+  properties {
+    property "sonar.projectKey", "LucasKreber_TestProject2"
+    property "sonar.organization", "lucaskreber"
+    property "sonar.host.url", "https://sonarcloud.io"
+  }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation group: 'com.google.code.gson', name: 'gson', version: '2.9.1'
+    testImplementation group: 'org.junit.jupiter', name: 'junit-jupiter-api', version: '5.9.1'
+}
